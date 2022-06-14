@@ -1,0 +1,22 @@
+﻿@model PlaceSite.Models.Price
+@{
+    ViewBag.Title = "PriceUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update Price</h2>
+<br />
+@using (Html.BeginForm("PriceUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.RoomName);
+    @Html.TextBoxFor(x => x.), new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.RoomPrice);
+    @Html.TextBoxFor(x => x.RoomPrice, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+}

@@ -1,0 +1,25 @@
+﻿@using PlaceSite.Models;
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>User Name</th>
+        <th>Password</th>
+
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.UserName</td>
+            <td>@u.Password</td>
+            <td> <a href="/AdminPanel/AdminDelete/@u.Id" class="btn btn-danger">Delete</a></td>
+            <td> <a href="/AdminPanel/AdminUpgrade/@u.Id" class="btn btn-success">Update</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/AdminAdd/" class="btn btn-info">Add To User</a>

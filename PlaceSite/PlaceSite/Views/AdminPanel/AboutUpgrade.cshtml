@@ -1,0 +1,22 @@
+﻿@model PlaceSite.Models.About
+@{
+    ViewBag.Title = "AboutUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update About Info</h2>
+<br />
+@using (Html.BeginForm("AboutUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.AboutUs);
+    @Html.TextBoxFor(x => x.AboutUs, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Img);
+    @Html.TextBoxFor(x => x.Img, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+}

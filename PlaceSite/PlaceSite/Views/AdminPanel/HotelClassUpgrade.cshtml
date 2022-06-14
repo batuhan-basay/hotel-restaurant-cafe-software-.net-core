@@ -1,0 +1,19 @@
+﻿@model PlaceSite.Models.HotelClass
+@{
+    ViewBag.Title = "HotelClassUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update Hotel Class</h2>
+<br />
+@using (Html.BeginForm("HotelClassUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.Type);
+    @Html.TextBoxFor(x => x.Type, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Update</button>
+}

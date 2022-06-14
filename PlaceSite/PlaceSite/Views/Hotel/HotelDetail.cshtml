@@ -1,0 +1,238 @@
+﻿@using PlaceSite.Models
+@model List<Hotel>
+@{
+    ViewBag.Title = "HotelDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <!--? Hero Area Start-->
+    <div class="slider-area hero-bg3 hero-overly">
+        <div class="single-slider   slider-height2 d-flex align-items-end">
+            <div class="container">
+                <div class="directory-details-head">
+                    <section class="wantToWork-area">
+                        <div class="wants-wrapper w-padding3">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-8">
+                                    <div class="details-cap d-flex">
+                                        <div class="icon">
+                                            <img src="~/assets/img/gallery/categori_icon1.png" alt="">
+                                        </div>
+                                        <div class="properties__caption">
+                                            <h3><a href="#">@ViewBag.names</a></h3>
+                                            <p>Adress: @ViewBag.adress</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="double-btn f-right  d-flex flex-wrap">
+
+                                        <div class="border-btn w-btn wantToWork-btn mr-20">
+                                            @if (@ViewBag.status == "1")
+                                            {
+                                                <span>
+                                                    Opening
+                                                </span>
+                                            }
+                                            else
+                                            { <span>
+                                                    Close
+                                                </span>
+                                            }
+                                        </div>
+                                        <a href="#" class="btn w-btn wantToWork-btn"><i class="fas fa-phone"></i>Call Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Directory Details start -->
+    <div class="directory-details pt-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="small-tittle mb-20">
+                        <h2>Description</h2>
+                    </div>
+                    <div class="directory-cap mb-40">
+                        <p>@ViewBag.explanations</p>
+                    </div>
+                    <div class="small-tittle mb-20">
+                        <h2>Gallery</h2>
+                    </div>
+                    <div class="gallery-img">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-6">
+                                    <img src="~/assets/img/gallery/@item.HotelGalleryId.Img" class="mb-30" alt="">
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Pricess.RoomName</td>
+                                    <td>@item.Pricess.RoomPrice</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-4">
+                    <div class="map">
+                        <iframe src="@ViewBag.location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="form-wrapper pt-80">
+                        <div class="row ">
+                            <div class="col-xl-12">
+                                <div class="small-tittle mb-30">
+                                    <h2>Contact</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="contact-form" action="#" method="POST">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-box user-icon mb-15">
+                                        <input type="text" name="name" placeholder="Your name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box email-icon mb-15">
+                                        <input type="text" name="email" placeholder="Email address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box message-icon mb-15">
+                                        <textarea name="message" id="message" placeholder="Comment"></textarea>
+                                    </div>
+                                    <div class="submit-info">
+                                        <button class="submit-btn2" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Directory Details End -->
+    <!--? Popular Locations Start 01-->
+    <div class="popular-location border-bottom section-padding40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-80">
+                        <h2>News & Updates</h2>
+                        <p>Let's uncover the best places to eat, drink, and shop nearest to you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-location mb-30">
+                        <div class="location-img">
+                            <img src="~/assets/img/gallery/home-blog1.png" alt="">
+                        </div>
+                        <div class="location-details">
+                            <a href="#" class="location-btn">Tips</a>
+                            <ul>
+                                <li>12 March   I   by Alan</li>
+                            </ul>
+                            <p><a href="blog_details.html">The Best SPA Salons For Your Relaxation</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-location mb-30">
+                        <div class="location-img">
+                            <img src="~/assets/img/gallery/home-blog2.png" alt="">
+                        </div>
+                        <div class="location-details">
+                            <a href="#" class="location-btn">Tips</a>
+                            <ul>
+                                <li>12 March   I   by Alan</li>
+                            </ul>
+                            <p><a href="blog_details.html">The Best SPA Salons For Your Relaxation</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popular Locations End -->
+    <!--? Want To work 02-->
+    <section class="wantToWork-area">
+        <div class="container">
+            <div class="wants-wrapper w-padding2">
+                <div class="row justify-content-between">
+                    <div class="col-xl-8 col-lg-8 col-md-7">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <img src="~/assets/img/logo/logo2_footer.png" alt="" class="mb-20">
+                            <p>
+                                Users and submit their own items. You can create different packages and by connecting with your
+                                PayPal or Stripe account charge users for registration to your directory portal.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-5">
+                        <div class="footer-social f-right sm-left">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+    <!--? Want To work 01-->
+    <section class="wantToWork-area">
+        <div class="container">
+            <div class="wants-wrapper">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-7 col-lg-9 col-md-8">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <div class="main-menu2">
+                                <nav>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="explore.html">Explore</a></li>
+                                        <li><a href="pages.html">Pages</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <a href="#" class="btn f-right sm-left">Add Listing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+</main>
+

@@ -1,0 +1,31 @@
+﻿@model PlaceSite.Models.Hotel
+@{
+    ViewBag.Title = "HotelAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Add To Hotel</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.HotelName);
+    @Html.TextBoxFor(x => x.HotelName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adress);
+    @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Status);
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation);
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Location);
+    @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CoverImg);
+    @Html.TextBoxFor(x => x.CoverImg, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>

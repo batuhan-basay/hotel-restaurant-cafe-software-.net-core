@@ -1,0 +1,225 @@
+﻿@using PlaceSite.Models
+@model List<Hotel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <!--? Hero Area Start-->
+    <div class="slider-area hero-bg2 hero-overly">
+        <div class="single-slider hero-overly  slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-10">
+                        <!-- Hero Caption -->
+                        <div class="hero__caption hero__caption2 pt-200">
+                            <h1>Explore hotels</h1>
+                        </div>
+                        <!-- hero category1 img -->
+                        <div class="category-img text-center">
+                            <a href="/Hotel"> <img src="~/assets/img/gallery/hero_category1.png" alt=""></a>
+                            <a href="/Cafe"> <img src="~/assets/img/gallery/hero_category2.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- listing Area Start -->
+    <div class="listing-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+
+                <!--?  Right content -->
+                <div class="col-xl-12 col-lg-12 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="count mb-35">
+                                <span>5432 Listings are available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--? Popular Directory Start -->
+                    <div class="popular-directorya-area fix">
+                        <div class="row">
+                            @foreach (var c in Model)
+                            {
+
+                                <div class="col-lg-6">
+                                    <!-- Single -->
+                                    <div class="properties properties2 mb-30">
+                                        <div class="properties__card">
+                                            <div class="properties__img overlay1">
+                                                <a href="#"><img src="~/assets/img/gallery/properties1.png" alt=""></a>
+                                                <div class="img-text">
+                                                    <span>$$$</span>
+
+                                                    @if (c.Status == "1")
+                                                    {
+                                                        <span>
+                                                            Opening
+                                                        </span>
+                                                    }
+                                                    else
+                                                    { <span>
+                                                            Close
+                                                        </span>
+                                                    }
+
+                                                </div>
+                                                <div class="icon">
+                                                    <img src="~/assets/img/gallery/categori_icon1.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="properties__caption">
+                                                <h3><a href="/Hotel/HotelDetail/@c.Id">@c.HotelName</a></h3>
+                                                <p>@c.Adress</p>
+                                            </div>
+                                            <div class="properties__footer d-flex justify-content-between align-items-center">
+                                                <div class="restaurant-name">
+                                                    <img src="~/assets/img/gallery/restaurant-icon.png" alt="">
+                                                    <h3>@c.Class.Type</h3>
+                                                </div>
+                                                <div class="heart">
+                                                    <img src="~/assets/img/gallery/heart1.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!--? Popular Directory End -->
+                    <!--Pagination Start  -->
+                    <div class="pagination-area text-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="single-wrap d-flex justify-content-center">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-start " id="myDIV">
+                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-left"></span></a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pagination End  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- listing-area Area End -->
+    <!--? Popular Locations Start 01-->
+    <div class="popular-location border-bottom section-padding40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-80">
+                        <h2>News & Updates</h2>
+                        <p>Let's uncover the best places to eat, drink, and shop nearest to you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-location mb-30">
+                        <div class="location-img">
+                            <img src="~/assets/img/gallery/home-blog1.png" alt="">
+                        </div>
+                        <div class="location-details">
+                            <a href="#" class="location-btn">Tips</a>
+                            <ul>
+                                <li>12 March   I   by Alan</li>
+                            </ul>
+                            <p><a href="blog_details.html">The Best SPA Salons For Your Relaxation</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-location mb-30">
+                        <div class="location-img">
+                            <img src="~/assets/img/gallery/home-blog2.png" alt="">
+                        </div>
+                        <div class="location-details">
+                            <a href="#" class="location-btn">Tips</a>
+                            <ul>
+                                <li>12 March   I   by Alan</li>
+                            </ul>
+                            <p><a href="blog_details.html">The Best SPA Salons For Your Relaxation</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popular Locations End -->
+    <!--? Want To work 02-->
+    <section class="wantToWork-area">
+        <div class="container">
+            <div class="wants-wrapper w-padding2">
+                <div class="row justify-content-between">
+                    <div class="col-xl-8 col-lg-8 col-md-7">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <img src="~/assets/img/logo/logo2_footer.png" alt="" class="mb-20">
+                            <p>
+                                Users and submit their own items. You can create different packages and by connecting with your
+                                PayPal or Stripe account charge users for registration to your directory portal.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-5">
+                        <div class="footer-social f-right sm-left">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+    <!--? Want To work 01-->
+    <section class="wantToWork-area">
+        <div class="container">
+            <div class="wants-wrapper">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-7 col-lg-9 col-md-8">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <div class="main-menu2">
+                                <nav>
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="explore.html">Explore</a></li>
+                                        <li><a href="pages.html">Pages</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <a href="#" class="btn f-right sm-left">Add Listing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+</main>
+

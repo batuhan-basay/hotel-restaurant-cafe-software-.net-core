@@ -1,0 +1,20 @@
+﻿@model PlaceSite.Models.CafeClass
+
+@{
+    ViewBag.Title = "CafeClassUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update Cafe Class Info</h2>
+<br />
+@using (Html.BeginForm("CafeClassUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.Type);
+    @Html.TextBoxFor(x => x.Type, new { @class = "form-control" })
+    <br />
+  
+    <button class="btn btn-warning">Update</button>
+}

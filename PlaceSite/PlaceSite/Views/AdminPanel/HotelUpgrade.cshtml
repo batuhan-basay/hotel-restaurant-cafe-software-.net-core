@@ -1,0 +1,37 @@
+﻿@model PlaceSite.Models.Hotel
+
+@{
+    ViewBag.Title = "HotelUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update Hotel Info</h2>
+<br />
+@using (Html.BeginForm("HotelUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.HotelName);
+    @Html.TextBoxFor(x => x.HotelName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adress);
+    @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Status);
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation);
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Location);
+    @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Star);
+    @Html.TextBoxFor(x => x.Star, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CoverImg);
+    @Html.TextBoxFor(x => x.CoverImg, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Update</button>
+}

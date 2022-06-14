@@ -1,0 +1,24 @@
+﻿@model PlaceSite.Models.Menu
+@{
+    ViewBag.Title = "MenuUpgrade";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Update Menu Info</h2>
+<br />
+@using (Html.BeginForm("MenuUpdate", "AdminPanel", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.FoodName);
+    @Html.TextBoxFor(x => x.FoodName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation);
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price);
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Update</button>
+}

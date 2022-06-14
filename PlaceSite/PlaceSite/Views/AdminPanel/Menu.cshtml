@@ -1,0 +1,30 @@
+﻿@using PlaceSite.Models;
+@model List<Menu>
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Food Name</th>
+        <th>Explanation</th>
+        <th>Price</th>
+
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.FoodName</td>
+            <td>@u.Explanation</td>
+            <td>@u.Price</td>
+            <td> <a href="/AdminPanel/MenuDelete/@u.Id" class="btn btn-danger">Delete</a></td>
+            <td> <a href="/AdminPanel/MenuUpgrade/@u.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/MenuAdd/" class="btn btn-info">Add To Cafe</a>
+

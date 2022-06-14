@@ -1,0 +1,46 @@
+﻿@model PlaceSite.Models.Cafe
+@{
+    ViewBag.Title = "CafeAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Add To Cafe</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.CafeName);
+    @Html.TextBoxFor(x => x.CafeName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adress);
+    @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Status);
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation);
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Location);
+    @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Star);
+    @Html.TextBoxFor(x => x.Star, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.CoverImg);
+    @Html.TextBoxFor(x => x.CoverImg, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Class.Id);
+    @Html.TextBoxFor(x => x.Class.Id, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CafeGallery_Id);
+    @Html.TextBoxFor(x => x.CafeGallery_Id, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Menu);
+    @Html.TextBoxFor(x => x.Menu, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>
+
+

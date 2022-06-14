@@ -1,0 +1,33 @@
+﻿@using PlaceSite.Models;
+@model List<Cafe>
+@{
+    ViewBag.Title = "CafeInfo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Cafe Name</th>
+        <th>Adress</th>
+        <th>Status</th>
+        <th>Explanation</th>
+        <th>Star</th>
+      
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.CafeName</td>
+            <td>@u.Adress</td>
+            <td>@u.Status</td>
+            <td>@u.Explanation</td>
+            <td>@u.Star </td>
+            <td> <a href="/AdminPanel/CafeDelete/@u.Id" class="btn btn-danger">Delete</a></td>
+            <td> <a href="/AdminPanel/CafeUpgrade/@u.Id" class="btn btn-success">Update</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/CafeAdd/" class="btn btn-info">Add To Cafe</a>

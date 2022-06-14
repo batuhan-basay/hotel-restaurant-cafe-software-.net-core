@@ -1,0 +1,25 @@
+﻿@using PlaceSite.Models;
+@model List<Price>
+@{
+    ViewBag.Title = "Price";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Room Name</th>
+        <th>Price</th>
+
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.RoomName</td>
+            <td>@u.RoomPrice</td>
+            <td> <a href="/AdminPanel/PriceDelete/@u.Id" class="btn btn-danger">Delete</a></td>
+            <td> <a href="/AdminPanel/PriceUpgrade/@u.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/PriceAdd/" class="btn btn-info">Add To Cafe</a>
+

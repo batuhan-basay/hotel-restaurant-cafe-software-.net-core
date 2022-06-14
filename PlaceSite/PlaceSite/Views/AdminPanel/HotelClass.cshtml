@@ -1,0 +1,27 @@
+﻿@using PlaceSite.Models;
+@model List<HotelClass>
+@{
+    ViewBag.Title = "HotelClass";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Class Name</th>
+
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.Type</td>
+            <td> <a href="/AdminPanel/HotelClassDelete/@u.Id" class="btn btn-danger">Delete</a></td>
+            <td> <a href="/AdminPanel/HotelClassUpgrade/@u.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/HotelClassAdd/" class="btn btn-info">Add To Hotel Class</a>
+
